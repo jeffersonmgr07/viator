@@ -4,11 +4,365 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Peru Trips | Iniciar sesión</title>
-  <meta name="description" content="Acceso de proveedores de Peru Trips" />
+  <meta name="description" content="Login de proveedores Peru Trips" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --card-bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --line: #cfd8dc;
+      --primary: #0f7a80;
+      --primary-dark: #0c676c;
+      --primary-soft: #b8d1d3;
+      --primary-soft-2: #d7e7e8;
+      --alert-blue: #2c7ea3;
+      --alert-border: #1c7f92;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px 16px 60px;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 470px;
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      padding: 42px 38px 48px;
+      border-radius: 2px;
+    }
+
+    .alert-box {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      border: 2px solid var(--alert-border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 30px;
+      background: #fff;
+    }
+
+    .alert-icon {
+      background: var(--alert-blue);
+      color: #fff;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 22px;
+      padding-top: 12px;
+      line-height: 1;
+    }
+
+    .alert-content {
+      padding: 14px 16px 16px;
+    }
+
+    .alert-content h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .alert-content p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.45;
+      color: #3f4652;
+    }
+
+    .alert-content a {
+      color: #4b5563;
+      text-decoration: underline;
+      word-break: break-word;
+    }
+
+    .brand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .brand img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .title {
+      margin: 0 0 18px;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .form-step {
+      display: block;
+      animation: fadeIn 0.28s ease;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .input-group input {
+      width: 100%;
+      height: 48px;
+      border: 1px solid #77aeb4;
+      border-radius: var(--radius-sm);
+      padding: 0 44px 0 14px;
+      font-size: 15px;
+      color: #111827;
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      background: #fff;
+    }
+
+    .input-group input::placeholder {
+      color: #8a9199;
+    }
+
+    .input-group input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15, 122, 128, 0.12);
+    }
+
+    .input-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #4b5563;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .input-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      height: 46px;
+      border: none;
+      border-radius: var(--radius-sm);
+      background: var(--primary-soft);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background var(--transition), transform 0.06s ease;
+    }
+
+    .btn-submit:hover {
+      background: #a9c7ca;
+    }
+
+    .btn-submit:active {
+      transform: translateY(1px);
+    }
+
+    .btn-submit.active {
+      background: var(--primary);
+    }
+
+    .btn-submit.active:hover {
+      background: var(--primary-dark);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: var(--primary);
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .helper-text {
+      min-height: 22px;
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .register-text {
+      margin: 28px 0 0;
+      text-align: center;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .register-text a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .register-text a:hover {
+      text-decoration: underline;
+    }
+
+    .loading-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 12px 0 6px;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .spinner {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 3px solid rgba(15, 122, 128, 0.18);
+      border-top-color: var(--primary);
+      animation: spin 0.75s linear infinite;
+    }
+
+    .loading-text {
+      font-size: 14px;
+      color: #5b6472;
+      font-weight: 500;
+    }
+
+    .help-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(15, 122, 128, 0.28);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .help-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .help-button svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .success-msg {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .login-card {
+        padding: 24px 20px 32px;
+      }
+
+      .title {
+        font-size: 22px;
+      }
+
+      .brand img {
+        max-width: 180px;
+      }
+
+      .help-button {
+        right: 14px;
+        bottom: 14px;
+        padding: 11px 15px;
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
   <main class="page">
@@ -26,30 +380,71 @@
       </div>
 
       <div class="brand">
-        <img src="assets/img/logo1.png" alt="Peru Trips" class="brand-logo">
+        <img src="assets/img/logo1.png" alt="Peru Trips">
       </div>
 
       <h1 class="title">Peru Trips Supplier Log in</h1>
 
-      <form class="login-form" id="loginForm" novalidate>
-        <div class="input-group">
-          <label for="email" class="sr-only">Dirección de correo electrónico</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Dirección de correo electrónico"
-            autocomplete="email"
-            required
-          />
-          <span class="input-icon" aria-hidden="true">🔑</span>
+      <form id="loginForm" novalidate>
+        <!-- PASO 1 -->
+        <div id="stepEmail" class="form-step">
+          <div class="input-group">
+            <label for="email" class="sr-only">Dirección de correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Dirección de correo electrónico"
+              autocomplete="email"
+              required
+            />
+            <span class="input-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M17 8V7a5 5 0 0 0-10 0v1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="5" y="8" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="12" cy="13.5" r="1.2" fill="currentColor"/>
+              </svg>
+            </span>
+          </div>
+
+          <button type="button" class="btn-submit" id="continueBtn">Siguiente</button>
+          <p class="helper-text" id="emailMsg"></p>
         </div>
 
-        <button type="submit" class="btn-submit" id="submitBtn">
-          Siguiente
-        </button>
+        <!-- CARGA -->
+        <div id="loadingStep" class="loading-wrap hidden">
+          <div class="spinner"></div>
+          <div class="loading-text">Cargando...</div>
+        </div>
 
-        <p class="helper-text" id="errorMsg"></p>
+        <!-- PASO 2 -->
+        <div id="stepPassword" class="form-step hidden">
+          <button type="button" class="back-link" id="backBtn">
+            ← Cambiar correo
+          </button>
+
+          <div class="input-group">
+            <label for="password" class="sr-only">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Contraseña"
+              autocomplete="current-password"
+              required
+            />
+            <span class="input-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M17 8V7a5 5 0 0 0-10 0v1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="5" y="8" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="12" cy="13.5" r="1.2" fill="currentColor"/>
+              </svg>
+            </span>
+          </div>
+
+          <button type="submit" class="btn-submit active" id="loginBtn">Iniciar sesión</button>
+          <p class="helper-text" id="passwordMsg"></p>
+        </div>
       </form>
 
       <p class="register-text">
@@ -59,6 +454,113 @@
     </section>
   </main>
 
-  <script src="assets/js/main.js"></script>
+  <button class="help-button" type="button" aria-label="Ayuda">
+    <svg viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M9.8 9.3a2.5 2.5 0 1 1 4.1 2c-.7.6-1.5 1.1-1.5 2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="12" cy="17" r="1" fill="currentColor"/>
+    </svg>
+    Ayuda
+  </button>
+
+  <script>
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+
+    const continueBtn = document.getElementById("continueBtn");
+    const loginBtn = document.getElementById("loginBtn");
+    const backBtn = document.getElementById("backBtn");
+
+    const stepEmail = document.getElementById("stepEmail");
+    const loadingStep = document.getElementById("loadingStep");
+    const stepPassword = document.getElementById("stepPassword");
+
+    const emailMsg = document.getElementById("emailMsg");
+    const passwordMsg = document.getElementById("passwordMsg");
+    const loginForm = document.getElementById("loginForm");
+
+    function validateEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+    }
+
+    function updateEmailButtonState() {
+      if (emailInput.value.trim() !== "") {
+        continueBtn.classList.add("active");
+      } else {
+        continueBtn.classList.remove("active");
+      }
+    }
+
+    function showEmailStep() {
+      loadingStep.classList.add("hidden");
+      stepPassword.classList.add("hidden");
+      stepEmail.classList.remove("hidden");
+      emailInput.focus();
+    }
+
+    function showLoadingStep() {
+      stepEmail.classList.add("hidden");
+      stepPassword.classList.add("hidden");
+      loadingStep.classList.remove("hidden");
+    }
+
+    function showPasswordStep() {
+      loadingStep.classList.add("hidden");
+      stepEmail.classList.add("hidden");
+      stepPassword.classList.remove("hidden");
+      passwordInput.focus();
+    }
+
+    emailInput.addEventListener("input", () => {
+      emailMsg.textContent = "";
+      updateEmailButtonState();
+    });
+
+    continueBtn.addEventListener("click", () => {
+      const email = emailInput.value.trim();
+
+      if (!email) {
+        emailMsg.textContent = "Por favor, ingrese su correo electrónico.";
+        emailInput.focus();
+        return;
+      }
+
+      if (!validateEmail(email)) {
+        emailMsg.textContent = "Ingrese un correo electrónico válido.";
+        emailInput.focus();
+        return;
+      }
+
+      emailMsg.textContent = "";
+      showLoadingStep();
+
+      setTimeout(() => {
+        showPasswordStep();
+      }, 1000);
+    });
+
+    backBtn.addEventListener("click", () => {
+      passwordMsg.textContent = "";
+      showEmailStep();
+    });
+
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      if (!stepPassword.classList.contains("hidden")) {
+        const password = passwordInput.value.trim();
+
+        if (!password) {
+          passwordMsg.textContent = "Por favor, ingrese su contraseña.";
+          passwordInput.focus();
+          return;
+        }
+
+        passwordMsg.innerHTML = '<span class="success-msg">Simulación lista. Aquí puedes conectar tu login real.</span>';
+      }
+    });
+
+    updateEmailButtonState();
+  </script>
 </body>
 </html>
