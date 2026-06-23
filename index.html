@@ -3,51 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Peru Trips | Iniciar sesión</title>
-  <meta name="description" content="Login de proveedores Peru Trips" />
+  <title>Viator Supplier | Iniciar sesión</title>
+  <meta name="description" content="Login de proveedores Viator" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f3f4f6;
       --card-bg: #ffffff;
       --text: #111827;
       --muted: #6b7280;
-      --line: #cfd8dc;
-      --primary: #0f7a80;
-      --primary-dark: #0c676c;
-      --primary-soft: #b8d1d3;
-      --primary-soft-2: #d7e7e8;
-      --alert-blue: #2c7ea3;
-      --alert-border: #1c7f92;
+      --primary: #007a78;
+      --primary-dark: #00615f;
+      --primary-soft: #bfd9da;
+      --alert-blue: #287aa2;
+      --alert-border: #147c8d;
+      --danger: #cc2936;
+      --success: #087568;
       --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
       --radius-sm: 6px;
-      --radius-md: 8px;
       --transition: 220ms ease;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
       padding: 0;
-      font-family: "Inter", sans-serif;
+      font-family: "Inter", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
     }
 
-    body {
-      min-height: 100vh;
-    }
+    body { min-height: 100vh; }
 
     .page {
       min-height: 100vh;
       display: grid;
       place-items: center;
-      padding: 28px 16px 60px;
+      padding: 28px 16px 68px;
     }
 
     .login-card {
@@ -75,34 +70,16 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 22px;
       padding-top: 12px;
       line-height: 1;
     }
 
-    .alert-content {
-      padding: 14px 16px 16px;
-    }
-
-    .alert-content h3 {
-      margin: 0 0 6px;
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .alert-content p {
-      margin: 0;
-      font-size: 15px;
-      line-height: 1.45;
-      color: #3f4652;
-    }
-
-    .alert-content a {
-      color: #4b5563;
-      text-decoration: underline;
-      word-break: break-word;
-    }
+    .alert-content { padding: 14px 16px 16px; }
+    .alert-content h3 { margin: 0 0 6px; font-size: 16px; font-weight: 800; }
+    .alert-content p { margin: 0; font-size: 15px; line-height: 1.45; color: #3f4652; }
+    .alert-content a { color: #4b5563; text-decoration: underline; word-break: break-word; }
 
     .brand {
       display: flex;
@@ -111,11 +88,22 @@
       margin-bottom: 22px;
     }
 
-    .brand img {
-      max-width: 220px;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
+    .brand-logo {
+      font-size: 45px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: #087568;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .brand-logo::after {
+      content: "•";
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      margin-left: 2px;
+      vertical-align: 22px;
+      color: #6aa8a3;
     }
 
     .title {
@@ -123,27 +111,18 @@
       font-size: 24px;
       line-height: 1.2;
       font-weight: 800;
-      color: #0f172a;
+      color: #0b1220;
     }
 
-    .form-step {
-      display: block;
-      animation: fadeIn 0.28s ease;
-    }
+    .form-step { display: block; animation: fadeIn 0.28s ease; }
+    .hidden { display: none !important; }
 
-    .hidden {
-      display: none !important;
-    }
-
-    .input-group {
-      position: relative;
-      margin-bottom: 18px;
-    }
+    .input-group { position: relative; margin-bottom: 18px; }
 
     .input-group input {
       width: 100%;
       height: 48px;
-      border: 1px solid #77aeb4;
+      border: 1px solid #78adb2;
       border-radius: var(--radius-sm);
       padding: 0 44px 0 14px;
       font-size: 15px;
@@ -153,14 +132,8 @@
       background: #fff;
     }
 
-    .input-group input::placeholder {
-      color: #8a9199;
-    }
-
-    .input-group input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(15, 122, 128, 0.12);
-    }
+    .input-group input::placeholder { color: #8a9199; }
+    .input-group input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0, 122, 120, 0.12); }
 
     .input-icon {
       position: absolute;
@@ -168,17 +141,12 @@
       top: 50%;
       transform: translateY(-50%);
       display: inline-flex;
-      align-items: center;
-      justify-content: center;
       color: #4b5563;
       opacity: 0.9;
       pointer-events: none;
     }
 
-    .input-icon svg {
-      width: 16px;
-      height: 16px;
-    }
+    .input-icon svg { width: 16px; height: 16px; }
 
     .btn-submit {
       width: 100%;
@@ -188,26 +156,15 @@
       background: var(--primary-soft);
       color: #ffffff;
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
       transition: background var(--transition), transform 0.06s ease;
     }
 
-    .btn-submit:hover {
-      background: #a9c7ca;
-    }
-
-    .btn-submit:active {
-      transform: translateY(1px);
-    }
-
-    .btn-submit.active {
-      background: var(--primary);
-    }
-
-    .btn-submit.active:hover {
-      background: var(--primary-dark);
-    }
+    .btn-submit:hover { background: #a9c7ca; }
+    .btn-submit:active { transform: translateY(1px); }
+    .btn-submit.active { background: var(--primary); }
+    .btn-submit.active:hover { background: var(--primary-dark); }
 
     .back-link {
       display: inline-flex;
@@ -219,20 +176,21 @@
       border: none;
       padding: 0;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
     }
 
-    .back-link:hover {
-      text-decoration: underline;
-    }
+    .back-link:hover { text-decoration: underline; }
 
     .helper-text {
       min-height: 22px;
       margin: 10px 0 0;
       font-size: 14px;
-      color: #4b5563;
+      color: var(--danger);
+      line-height: 1.35;
     }
+
+    .helper-text.success { color: var(--success); font-weight: 700; }
 
     .register-text {
       margin: 28px 0 0;
@@ -241,15 +199,8 @@
       color: var(--muted);
     }
 
-    .register-text a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .register-text a:hover {
-      text-decoration: underline;
-    }
+    .register-text a { color: var(--primary); text-decoration: none; font-weight: 700; }
+    .register-text a:hover { text-decoration: underline; }
 
     .loading-wrap {
       display: flex;
@@ -265,16 +216,12 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      border: 3px solid rgba(15, 122, 128, 0.18);
+      border: 3px solid rgba(0, 122, 120, 0.18);
       border-top-color: var(--primary);
       animation: spin 0.75s linear infinite;
     }
 
-    .loading-text {
-      font-size: 14px;
-      color: #5b6472;
-      font-weight: 500;
-    }
+    .loading-text { font-size: 14px; color: #5b6472; font-weight: 600; }
 
     .help-button {
       position: fixed;
@@ -285,33 +232,18 @@
       gap: 8px;
       border: none;
       border-radius: 999px;
-      background: var(--primary);
+      background: #006f6d;
       color: #fff;
       padding: 12px 18px;
       font-size: 16px;
-      font-weight: 600;
-      box-shadow: 0 8px 20px rgba(15, 122, 128, 0.28);
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 111, 109, 0.28);
       cursor: pointer;
       transition: background var(--transition), transform var(--transition);
     }
 
-    .help-button:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-    }
-
-    .help-button svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
-
-    .success-msg {
-      margin-top: 10px;
-      font-size: 14px;
-      color: var(--primary-dark);
-      font-weight: 500;
-    }
+    .help-button:hover { background: #005c5b; transform: translateY(-1px); }
+    .help-button svg { width: 18px; height: 18px; flex-shrink: 0; }
 
     .sr-only {
       position: absolute;
@@ -325,42 +257,14 @@
       border: 0;
     }
 
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(6px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
     @media (max-width: 540px) {
-      .login-card {
-        padding: 24px 20px 32px;
-      }
-
-      .title {
-        font-size: 22px;
-      }
-
-      .brand img {
-        max-width: 180px;
-      }
-
-      .help-button {
-        right: 14px;
-        bottom: 14px;
-        padding: 11px 15px;
-        font-size: 15px;
-      }
+      .login-card { padding: 24px 20px 32px; }
+      .title { font-size: 22px; }
+      .brand-logo { font-size: 39px; }
+      .help-button { right: 14px; bottom: 14px; padding: 11px 15px; font-size: 15px; }
     }
   </style>
 </head>
@@ -374,30 +278,22 @@
           <p>
             Por motivos de seguridad, le recomendamos que marque o guarde esta
             página. Antes de iniciar sesión, compruebe que se encuentra en la URL correcta.
-            <a href="#">https://supplier.perutrips.com</a>
+            <a href="#">https://supplier.viator.com</a>
           </p>
         </div>
       </div>
 
-      <div class="brand">
-        <img src="assets/img/logo1.png" alt="Peru Trips">
+      <div class="brand" aria-label="Viator">
+        <span class="brand-logo">viator</span>
       </div>
 
-      <h1 class="title">Peru Trips Supplier Log in</h1>
+      <h1 class="title">Viator Supplier Log in</h1>
 
       <form id="loginForm" novalidate>
-        <!-- PASO 1 -->
         <div id="stepEmail" class="form-step">
           <div class="input-group">
             <label for="email" class="sr-only">Dirección de correo electrónico</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Dirección de correo electrónico"
-              autocomplete="email"
-              required
-            />
+            <input type="email" id="email" name="email" placeholder="Dirección de correo electrónico" autocomplete="email" required />
             <span class="input-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
                 <path d="M17 8V7a5 5 0 0 0-10 0v1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -411,28 +307,17 @@
           <p class="helper-text" id="emailMsg"></p>
         </div>
 
-        <!-- CARGA -->
         <div id="loadingStep" class="loading-wrap hidden">
           <div class="spinner"></div>
           <div class="loading-text">Cargando...</div>
         </div>
 
-        <!-- PASO 2 -->
         <div id="stepPassword" class="form-step hidden">
-          <button type="button" class="back-link" id="backBtn">
-            ← Cambiar correo
-          </button>
+          <button type="button" class="back-link" id="backBtn">← Cambiar correo</button>
 
           <div class="input-group">
             <label for="password" class="sr-only">Contraseña</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Contraseña"
-              autocomplete="current-password"
-              required
-            />
+            <input type="password" id="password" name="password" placeholder="Contraseña" autocomplete="current-password" required />
             <span class="input-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
                 <path d="M17 8V7a5 5 0 0 0-10 0v1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -464,17 +349,16 @@
   </button>
 
   <script>
+    const AUTH_EMAIL = "reservas@mycuscotrip.com";
+    const AUTH_PASSWORD = "MyCusco2021*";
+
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
-
     const continueBtn = document.getElementById("continueBtn");
-    const loginBtn = document.getElementById("loginBtn");
     const backBtn = document.getElementById("backBtn");
-
     const stepEmail = document.getElementById("stepEmail");
     const loadingStep = document.getElementById("loadingStep");
     const stepPassword = document.getElementById("stepPassword");
-
     const emailMsg = document.getElementById("emailMsg");
     const passwordMsg = document.getElementById("passwordMsg");
     const loginForm = document.getElementById("loginForm");
@@ -484,11 +368,7 @@
     }
 
     function updateEmailButtonState() {
-      if (emailInput.value.trim() !== "") {
-        continueBtn.classList.add("active");
-      } else {
-        continueBtn.classList.remove("active");
-      }
+      continueBtn.classList.toggle("active", emailInput.value.trim() !== "");
     }
 
     function showEmailStep() {
@@ -516,6 +396,11 @@
       updateEmailButtonState();
     });
 
+    passwordInput.addEventListener("input", () => {
+      passwordMsg.textContent = "";
+      passwordMsg.classList.remove("success");
+    });
+
     continueBtn.addEventListener("click", () => {
       const email = emailInput.value.trim();
 
@@ -533,31 +418,41 @@
 
       emailMsg.textContent = "";
       showLoadingStep();
-
-      setTimeout(() => {
-        showPasswordStep();
-      }, 1000);
+      setTimeout(showPasswordStep, 650);
     });
 
     backBtn.addEventListener("click", () => {
       passwordMsg.textContent = "";
+      passwordInput.value = "";
       showEmailStep();
     });
 
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      if (!stepPassword.classList.contains("hidden")) {
-        const password = passwordInput.value.trim();
+      const email = emailInput.value.trim().toLowerCase();
+      const password = passwordInput.value;
 
-        if (!password) {
-          passwordMsg.textContent = "Por favor, ingrese su contraseña.";
-          passwordInput.focus();
-          return;
-        }
-
-        passwordMsg.innerHTML = '<span class="success-msg">Simulación lista. Aquí puedes conectar tu login real.</span>';
+      if (!password) {
+        passwordMsg.textContent = "Por favor, ingrese su contraseña.";
+        passwordInput.focus();
+        return;
       }
+
+      if (email === AUTH_EMAIL && password === AUTH_PASSWORD) {
+        passwordMsg.textContent = "Acceso correcto. Redirigiendo...";
+        passwordMsg.classList.add("success");
+        sessionStorage.setItem("viatorSupplierLoggedIn", "true");
+        sessionStorage.setItem("viatorSupplierUser", AUTH_EMAIL);
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 550);
+        return;
+      }
+
+      passwordMsg.classList.remove("success");
+      passwordMsg.textContent = "Correo o contraseña incorrectos. Revise las credenciales e inténtelo nuevamente.";
+      passwordInput.focus();
     });
 
     updateEmailButtonState();
