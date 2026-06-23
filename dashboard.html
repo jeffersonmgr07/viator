@@ -420,6 +420,137 @@
     .lime-btn { background: #d9ff00; border: 0; padding: 12px 32px; font-weight: 900; border-radius: 3px; }
     .close-bokun { position: absolute; right: 20px; top: 18px; border: 0; background: transparent; font-size: 26px; color: var(--primary); cursor: pointer; }
 
+
+
+    /* Ajuste compacto: reduce letras, cajas y espacios del contenido para que se vea más parecido al panel real. */
+    @media (min-width: 761px) {
+      .layout { max-width: 1320px; padding: 32px 28px 76px; }
+      .page-title { font-size: 34px; margin-bottom: 24px; letter-spacing: -.8px; }
+      .success-alert { min-height: 110px; padding: 20px 28px; margin-bottom: 28px; }
+      .big-icon { width: 56px; height: 56px; font-size: 28px; margin-right: 20px; }
+      .success-alert h2 { font-size: 24px; margin-bottom: 6px; }
+      .success-alert p { font-size: 19px; }
+      .two-col { gap: 28px; }
+      .metric-card { min-height: 350px; padding: 32px; }
+      .metric-title { gap: 16px; margin-bottom: 24px; }
+      .line-icon { font-size: 26px; }
+      .metric-title h2 { font-size: 27px; }
+      .metric-card p { font-size: 19px; margin-bottom: 28px; }
+      .metric-row { margin: 34px 0; }
+      .metric-label { font-size: 18px; }
+      .metric-num { font-size: 42px; }
+      .cancel-big { font-size: 88px; margin-top: 72px; }
+      .section-shell { grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; }
+      .content-card { padding: 34px 40px; }
+      .side-card { padding: 26px; min-height: 190px; }
+      .side-card h3 { font-size: 20px; }
+      .side-card p { font-size: 16px; }
+      .side-icon { width: 50px; height: 50px; font-size: 26px; }
+      .filters { grid-template-columns: 150px 320px 290px 220px; gap: 10px; margin-bottom: 18px; }
+      .field, .select-like { height: 44px; padding: 0 12px; font-size: 14px; }
+      .quick { font-size: 14px; margin: 14px 0 18px; }
+      .booking-card { padding: 22px 24px; margin-top: 18px; max-width: 100%; }
+      .booking-card h2 { font-size: 22px; margin: 16px 0 7px; }
+      .subtitle { font-size: 17px; margin-bottom: 14px; }
+      .booking-grid { gap: 28px; padding-top: 16px; font-size: 15px; }
+      .booking-top { font-size: 14px; }
+      .badge { min-height: 20px; font-size: 11px; padding: 3px 7px; }
+      .booking-actions { margin-top: 18px; padding-top: 14px; }
+      .outline-btn { height: 38px; padding: 0 20px; }
+      .products-shell { max-width: 1120px; padding: 42px 40px; }
+      .info-banner { margin-bottom: 48px; }
+      .info-text { font-size: 17px; padding: 16px 20px; }
+      .tabs { gap: 28px; margin-bottom: 26px; }
+      .tabs button { font-size: 16px; padding-bottom: 13px; }
+      .section-head h1, .availability-card h1 { font-size: 30px; }
+      .product-tools { gap: 24px; margin-bottom: 26px; }
+      .search-box { height: 48px; font-size: 17px; }
+      .product-count { font-size: 17px; }
+      .product-row { grid-template-columns: 160px 1fr 240px; padding: 22px 0; }
+      .thumb { height: 94px; }
+      .product-name { font-size: 18px; }
+      .product-meta { font-size: 14px; }
+      .solid-btn { height: 42px; font-size: 14px; }
+      .availability-card { padding: 36px; }
+      .availability-card > p { font-size: 15px; }
+      .availability-tools { grid-template-columns: 170px 320px; gap: 12px; }
+      .day-strip { font-size: 18px; padding: 15px; }
+      .day-strip p, .availability-row p { font-size: 15px; }
+      .availability-row h3 { font-size: 18px; }
+      .review-card h3 { font-size: 19px; }
+      .review-text { font-size: 15px; }
+      .finance-card { padding: 24px; }
+      .finance-card .money { font-size: 34px; }
+    }
+
+    .bookings-list { max-width: 1110px; }
+    .details-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      border: 0;
+      background: transparent;
+      color: var(--primary);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      padding: 0;
+    }
+    .details-toggle:hover { text-decoration: underline; }
+    .booking-details {
+      display: none;
+      border-top: 1px solid #e6e9ed;
+      margin-top: 16px;
+      padding-top: 18px;
+      color: #454a52;
+      font-size: 15px;
+      line-height: 1.42;
+    }
+    .booking-details.show { display: block; }
+    .instant-label {
+      color: #6b7078;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .01em;
+      margin-bottom: 16px;
+    }
+    .details-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+    }
+    .detail-heading {
+      margin: 18px 0 6px;
+      color: #0e1420;
+      font-weight: 900;
+    }
+    .booking-details p { margin: 0 0 12px; }
+    .booking-details ul { margin: 4px 0 16px 20px; padding: 0; }
+    .booking-details li { margin: 3px 0; }
+    .masked-phone { display: inline-flex; align-items: center; gap: 10px; }
+    .show-link { color: var(--primary); font-weight: 800; }
+    .booking-links { margin-top: 14px; display: grid; gap: 12px; }
+    .pagination-row {
+      max-width: 1110px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #555a62;
+      font-weight: 700;
+      padding: 22px 0 0;
+    }
+    .page-indicator { display: flex; align-items: center; gap: 22px; }
+    .current-page { color: #333942; border-bottom: 3px solid #333942; padding: 0 20px 18px; }
+    .per-page { display: flex; align-items: center; gap: 12px; }
+    .per-page-box { border: 1px solid #d9dde2; background: #fff; border-radius: 4px; padding: 12px 16px; }
+
+    @media (max-width: 760px) {
+      .details-columns { grid-template-columns: 1fr; gap: 8px; }
+      .booking-details { font-size: 14px; }
+      .pagination-row { display: none; }
+    }
+
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
     @media (max-width: 1100px) {
@@ -551,7 +682,7 @@
           <div class="filters">
             <div class="field">BR-por ejemplo: 91</div>
             <div class="field">📅 &nbsp; 22 jun 2026 &nbsp;&nbsp;&nbsp; | &nbsp; 📅 &nbsp; A</div>
-            <div class="select-like green-select">Estado de la reserva (Todos) (9)⌄</div>
+            <div class="select-like green-select">Estado de la reserva (Todos) (10)⌄</div>
             <div class="field">Lead traveler</div>
             <div class="select-like" style="grid-column: span 2;">Todos los productos (30)<span>⌄</span></div>
             <div class="select-like">Reservas nuevas al principio<span>⌄</span></div>
@@ -559,20 +690,7 @@
 
           <div class="quick">⚱️ Filtros rápidos: <a href="#">Hoy</a> | <a href="#">Mañana</a> | <a href="#">Próximos 7 días</a><span class="clear-filters">✕ Borrar todos los filtros</span></div>
 
-          <div class="booking-card">
-            <div class="booking-top"><span>🗓️ jue, 10 sept 2026</span><span class="badge">Cancelada</span></div>
-            <h2>Tour Guiado de Día Completo a Machu Picchu – Almuerzo Opcional</h2>
-            <div class="subtitle">Tour Guiado de Día Completo a Machu Picchu – Almuerzo Opcional 04:00</div>
-            <div class="booking-grid">
-              <div><b>Viajero principal:</b> Walter Reeves<br><br>5 adultos</div>
-              <div><b>BR-1405671983</b><br><br>Enviada 2 jun 2026, 17:17 GMT−5</div>
-            </div>
-            <a href="#" style="display:inline-block;margin-top:16px;font-weight:700;">Mostrar detalles⌄</a>
-            <div class="booking-actions">
-              <a href="#">Aceptar</a>
-              <button class="outline-btn">Enviar un mensaje al viajero</button>
-            </div>
-          </div>
+          <div id="bookingsList" class="bookings-list"></div>
         </div>
 
         <aside class="side-card">
@@ -748,9 +866,515 @@
   </main>
 
   <button class="help-button"><span>?</span><span>Ayuda</span></button>
-  <div class="bokun-banner" id="bokunBanner"><div class="bokun-logo">Bókun</div><p>¿No tiene un sitio web para hacer reservas? Cree uno con Bókun.</p><button class="lime-btn">Más información</button><button class="close-bokun" id="closeBokun">×</button></div>
+  <div class="bokun-banner show" id="bokunBanner"><div class="bokun-logo">Bókun</div><p>¿No tiene un sitio web para hacer reservas? Cree uno con Bókun.</p><button class="lime-btn">Más información</button><button class="close-bokun" id="closeBokun">×</button></div>
 
   <script>
+
+    const bookings = [
+      {
+            "date": "jue, 10 sept 2026",
+            "status": "Cancelada",
+            "statusClass": "danger",
+            "title": "Tour Guiado de Día Completo a Machu Picchu – Almuerzo Opcional",
+            "subtitle": "Tour Guiado de Día Completo a Machu Picchu – Almuerzo Opcional 04:00",
+            "traveler": "Walter Reeves",
+            "paxText": "5 adultos",
+            "code": "BR-1405671983",
+            "sent": "Enviada 2 jun 2026, 17:17 GMT−5",
+            "phone": "+1 ***-***-7421",
+            "names": [
+                  "Walter Reeves (Adulto)",
+                  "JoAnn DeBorde (Adulto)",
+                  "Joshua DeBorde (Adulto)",
+                  "Jarret DeBorde (Adulto)",
+                  "Natalie Gonzalez (Adulto)"
+            ],
+            "language": "Inglés",
+            "services": [
+                  "Transfer and pick up at Ollantaytambo train station.",
+                  "Train ticket to Machu Picchu category Voyager or Expedition (round trip).",
+                  "Bus up and down to Machu Picchu.",
+                  "Entrance ticket to the citadel of Machu Picchu.",
+                  "Guided tour in the citadel of Machu Picchu by a certified guide.",
+                  "Permanent assistance and guidance 24/7 by an assigned travel agent."
+            ],
+            "pickup": "Casa Biru Hotel Boutique, Calle San Agustin 212, Cusco 08002 Peru",
+            "origin": "Viator",
+            "productCode": "159709P15",
+            "supplierConfirmation": "VIA-93417142",
+            "api": "Sí",
+            "cancellation": "No aplica",
+            "amount": "0,00 USD",
+            "passports": "FIC-P13972013, FIC-A47354468, FIC-545073747, FIC-A72165530, FIC-A72161934",
+            "nationalities": "USA, USA, USA, USA, USA",
+            "expiry": "JUNE 24 2032, MARCH 10 2035, APRIL 20 2027, NOVEMBER 3 2035, NOVEMBER 3 2035",
+            "births": "SEPTEMBER 20 1961, JANUARY 12 1967, JULY 25 1993, JULY 3 1987, AUGUST 7 1996",
+            "action": "Aceptar"
+      },
+      {
+            "date": "vie, 2 oct 2026",
+            "status": "Confirmada",
+            "statusClass": "ok",
+            "title": "Bienvenida Ancestral – Cusco",
+            "subtitle": "Bienvenida Ancestral – Cusco 11:00",
+            "traveler": "Mercedes Barrow",
+            "paxText": "1 adulto",
+            "code": "BR-1375046801",
+            "sent": "Enviada 20 mar 2026, 10:36 GMT−5",
+            "phone": "+1 ***-***-5814",
+            "names": [
+                  "Mercedes Barrow (Adulto)"
+            ],
+            "language": "Inglés",
+            "services": [
+                  "Private pick up and drop off from the hotel in Cusco.",
+                  "Ancestral welcome ceremony with Andean host.",
+                  "Pachamama offering materials included.",
+                  "Bilingual assistance before and during the activity.",
+                  "Photos and basic coordination with the local team."
+            ],
+            "pickup": "Antigua Casona San Blas, Carmen Bajo 243, Cusco",
+            "origin": "Viator",
+            "productCode": "159709P20",
+            "supplierConfirmation": "VIA-77241805",
+            "api": "Sí",
+            "cancellation": "No aplica",
+            "amount": "85,00 USD",
+            "passports": "FIC-MB4938102",
+            "nationalities": "USA",
+            "expiry": "AUGUST 18 2031",
+            "births": "MAY 9 1978",
+            "action": "Cancelar reserva"
+      },
+      {
+            "date": "mié, 22 abr 2026",
+            "status": "Confirmada",
+            "statusClass": "ok",
+            "title": "Machu Picchu Full Day – Tren Vistadome Observatory",
+            "subtitle": "Machu Picchu Full Day – Vistadome Observatory ida / Expedition retorno 04:00",
+            "traveler": "Jennifer Salgado",
+            "paxText": "2 adultos",
+            "code": "CUZ-21422311",
+            "sent": "Enviada 8 abr 2026, 09:18 GMT−5",
+            "phone": "+1 ***-***-2740",
+            "names": [
+                  "Jennifer Salgado (Adulto)",
+                  "Michael Salgado (Adulto)"
+            ],
+            "language": "Inglés",
+            "services": [
+                  "Traslado hacia Ollantaytambo.",
+                  "Ticket Ingreso Machu Picchu.",
+                  "Ticket de Tren Vistadome Observatory Ruta ida.",
+                  "Ticket de Tren Expedition Clásico Ruta retorno.",
+                  "Guía Machu Picchu.",
+                  "Bus Consettur Machu Picchu.",
+                  "Traslado Estación Tren (ida y vuelta)."
+            ],
+            "pickup": "Novotel Cusco, Calle San Agustin 239, Cusco",
+            "origin": "Viator",
+            "productCode": "159709P21",
+            "supplierConfirmation": "VIA-21422311",
+            "api": "Sí",
+            "cancellation": "No aplica",
+            "amount": "939,80 USD",
+            "passports": "FIC-JS5201846, FIC-MS4472091",
+            "nationalities": "USA, USA",
+            "expiry": "APRIL 12 2031, JULY 30 2032",
+            "births": "FEBRUARY 16 1989, OCTOBER 4 1986",
+            "action": "Cancelar reserva"
+      },
+      {
+            "date": "sáb, 30 may 2026",
+            "status": "Confirmada",
+            "statusClass": "ok",
+            "title": "Paquete Cusco, Valle Sagrado y Machu Picchu – Privado",
+            "subtitle": "Paquete privado con hoteles, Valle Sagrado y Machu Picchu 09:00",
+            "traveler": "Mariana Arango Franco",
+            "paxText": "9 adultos",
+            "code": "CUZ-21422311-9",
+            "sent": "Enviada 14 may 2026, 12:08 GMT−5",
+            "phone": "+57 ***-***-9136",
+            "names": [
+                  "Mariana Arango Franco (Adulto)",
+                  "Andrés Arango (Adulto)",
+                  "Camila Franco (Adulto)",
+                  "Sofía Restrepo (Adulto)",
+                  "Juan Pablo Arango (Adulto)",
+                  "Valentina Gómez (Adulto)",
+                  "Catalina Vélez (Adulto)",
+                  "Mateo Franco (Adulto)",
+                  "Isabella Arango (Adulto)"
+            ],
+            "language": "Inglés",
+            "services": [
+                  "Recojo Aeropuerto (ida y vuelta).",
+                  "Hotel Cusco - Cusco Boutique.",
+                  "Hotel Machu Picchu - Luz Garden.",
+                  "Traslado hacia Ollantaytambo.",
+                  "Tour Valle Sagrado Privado.",
+                  "Ticket Ingreso Machu Picchu.",
+                  "Ticket de Tren Vistadome Ruta ida.",
+                  "Ticket de Tren Expedition Ruta retorno.",
+                  "Guía Machu Picchu.",
+                  "Bus Consettur Machu Picchu.",
+                  "Traslado Estación Tren (ida y vuelta)."
+            ],
+            "pickup": "Cusco Boutique Hotel, Calle Suecia 343, Cusco",
+            "origin": "Viator",
+            "productCode": "159709P22",
+            "supplierConfirmation": "VIA-99847210",
+            "api": "Sí",
+            "cancellation": "No aplica",
+            "amount": "5.039,10 USD",
+            "passports": "FIC-MA830112, FIC-AA773904, FIC-CF224901, FIC-SR557380, FIC-JA665129, FIC-VG881240, FIC-CV139905, FIC-MF748210, FIC-IA440381",
+            "nationalities": "Colombia, Colombia, Colombia, Colombia, Colombia, Colombia, Colombia, Colombia, Colombia",
+            "expiry": "MAY 18 2031, JUNE 7 2030, JANUARY 24 2032, SEPTEMBER 9 2031, MARCH 12 2030, OCTOBER 25 2033, FEBRUARY 14 2032, JULY 3 2034, DECEMBER 19 2031",
+            "births": "APRIL 3 1984, JUNE 11 1981, NOVEMBER 22 1986, JULY 18 1992, JANUARY 8 1988, MARCH 29 1995, SEPTEMBER 6 1989, MAY 20 1991, DECEMBER 2 1997",
+            "action": "Cancelar reserva"
+      },
+      {
+            "date": "dom, 24 may 2026",
+            "status": "Confirmada",
+            "statusClass": "ok",
+            "title": "Paquete Valle Sagrado y Machu Picchu – 3 días",
+            "subtitle": "Valle Sagrado privado + Machu Picchu con tren Vistadome 08:30",
+            "traveler": "Carlos Villegas Valencia",
+            "paxText": "2 adultos",
+            "code": "CUZ-21414877",
+            "sent": "Enviada 14 may 2026, 08:42 GMT−5",
+            "phone": "+57 ***-***-4819",
+            "names": [
+                  "Carlos Villegas Valencia (Adulto)",
+                  "Laura Villegas Moreno (Adulto)"
+            ],
+            "language": "Inglés",
+            "services": [
+                  "Recojo Aeropuerto (ida y vuelta).",
+                  "Hotel Cusco - Cusco Boutique.",
+                  "Hotel Machu Picchu - Luz Garden.",
+                  "Traslado hacia Ollantaytambo.",
+                  "Tour Valle Sagrado Privado.",
+                  "Ticket Ingreso Machu Picchu.",
+                  "Ticket de Tren Vistadome Ruta ida.",
+                  "Ticket de Tren Expedition Ruta retorno.",
+                  "Guía Machu Picchu.",
+                  "Bus Consettur Machu Picchu.",
+                  "Traslado Estación Tren (ida y vuelta)."
+            ],
+            "pickup": "Hotel Cusco Boutique, Calle Tecsecocha 566, Cusco",
+            "origin": "Viator",
+            "productCode": "159709P23",
+            "supplierConfirmation": "VIA-21414877",
+            "api": "Sí",
+            "cancellation": "No aplica",
+            "amount": "1.251,00 USD",
+            "passports": "FIC-CV711209, FIC-LV224508",
+            "nationalities": "Colombia, Colombia",
+            "expiry": "MAY 2 2031, AUGUST 16 2032",
+            "births": "JULY 14 1979, MARCH 6 1983",
+            "action": "Cancelar reserva"
+      },
+      {
+            "date": "mié, 20 may 2026",
+            "status": "Confirmada",
+            "statusClass": "ok",
+            "title": "Cusco Completo + Machu Picchu + Montaña de Colores",
+            "subtitle": "Programa completo con tours, hoteles y trenes 07:30",
+            "traveler": "Nelly Lycurgue",
+            "paxText": "2 adultos",
+            "code": "BR-860808170",
+            "sent": "Enviada 14 may 2026, 11:51 GMT−5",
+            "phone": "+33 ***-***-6027",
+            "names": [
+                  "Nelly Lycurgue (Adulto)",
+                  "Pierre Lycurgue (Adulto)"
+            ],
+            "language": "Inglés",
+            "services": [
+                  "Recojo Aeropuerto (ida y vuelta).",
+                  "Hotel Cusco - Cusco Boutique.",
+                  "Hotel Machu Picchu - Luz Garden.",
+                  "Boleto turístico General.",
+                  "City Tour + Bienvenida Ancestral.",
+                  "Tour Valle Sagrado VIP.",
+                  "Traslado Estación Tren (ida y vuelta).",
+                  "Ticket Ingreso Machu Picchu.",
+                  "Ticket de Tren Vistadome Ruta ida.",
+                  "Ticket de Tren Expedition Ruta retorno.",
+                  "Guía Machu Picchu.",
+                  "Bus Consettur Machu Picchu.",
+                  "Tour Valle Sur.",
+                  "Tour Montaña de Colores.",
+                  "Traslado aeropuerto."
+            ],
+            "pickup": "Casa Andina Standard Cusco Plaza, Portal Espinar 142, Cusco",
+            "origin": "Viator",
+            "productCode": "159709P24",
+            "supplierConfirmation": "VIA-860808170",
+            "api": "Sí",
+            "cancellation": "No aplica",
+            "amount": "1.419,80 USD",
+            "passports": "FIC-NL440812, FIC-PL118304",
+            "nationalities": "France, France",
+            "expiry": "JUNE 21 2032, MAY 9 2031",
+            "births": "OCTOBER 19 1968, APRIL 27 1965",
+            "action": "Cancelar reserva"
+      },
+      {
+            "date": "mar, 19 may 2026",
+            "status": "Confirmada",
+            "statusClass": "ok",
+            "title": "Cusco, Machu Picchu, Humantay y Valle Sur",
+            "subtitle": "Programa privado con The Prime y The Voyager 08:00",
+            "traveler": "Jessyca Lefebvre Hamelin",
+            "paxText": "2 adultos",
+            "code": "BR-842618094",
+            "sent": "Enviada 14 may 2026, 10:14 GMT−5",
+            "phone": "+33 ***-***-3901",
+            "names": [
+                  "Jessyca Lefebvre Hamelin (Adulto)",
+                  "Antoine Lefebvre (Adulto)"
+            ],
+            "language": "Inglés",
+            "services": [
+                  "Recojo Aeropuerto (ida y vuelta).",
+                  "Boleto Turístico General.",
+                  "City Tour + Bienvenida Ancestral.",
+                  "Tour Montaña de Colores.",
+                  "Tour Valle Sagrado.",
+                  "Ticket Ingreso Machu Picchu.",
+                  "Ticket de Tren The Prime Ruta ida.",
+                  "Ticket de Tren The Voyager Ruta retorno.",
+                  "Guía Machu Picchu.",
+                  "Bus Consettur Machu Picchu.",
+                  "Traslado Estación Tren (ida y vuelta).",
+                  "Tour Laguna Humantay.",
+                  "Tour Valle Sur.",
+                  "Traslado Aeropuerto."
+            ],
+            "pickup": "Tierra Viva Cusco Centro, Calle Cruz Verde 390, Cusco",
+            "origin": "Viator",
+            "productCode": "159709P25",
+            "supplierConfirmation": "VIA-842618094",
+            "api": "Sí",
+            "cancellation": "No aplica",
+            "amount": "1.199,80 USD",
+            "passports": "FIC-JL829401, FIC-AL738200",
+            "nationalities": "France, France",
+            "expiry": "NOVEMBER 4 2032, FEBRUARY 13 2030",
+            "births": "AUGUST 8 1990, JANUARY 30 1988",
+            "action": "Cancelar reserva"
+      },
+      {
+            "date": "jue, 14 may 2026",
+            "status": "Confirmada",
+            "statusClass": "ok",
+            "title": "Valle Sagrado y Machu Picchu – Privado",
+            "subtitle": "Valle Sagrado privado + Machu Picchu con hoteles 09:00",
+            "traveler": "John Messerschmidt",
+            "paxText": "2 adultos",
+            "code": "BR-931883800",
+            "sent": "Enviada 14 may 2026, 09:36 GMT−5",
+            "phone": "+1 ***-***-6072",
+            "names": [
+                  "John Messerschmidt (Adulto)",
+                  "Anne Messerschmidt (Adulto)"
+            ],
+            "language": "Inglés",
+            "services": [
+                  "Recojo Aeropuerto (ida y vuelta).",
+                  "Hotel Cusco - Cusco Boutique.",
+                  "Hotel Machu Picchu - Luz Garden.",
+                  "Traslado hacia Ollantaytambo.",
+                  "Tour Valle Sagrado Privado.",
+                  "Ticket Ingreso Machu Picchu.",
+                  "Ticket de Tren Vistadome Ruta ida.",
+                  "Ticket de Tren Expedition Ruta retorno.",
+                  "Guía Machu Picchu.",
+                  "Bus Consettur Machu Picchu.",
+                  "Traslado Estación Tren (ida y vuelta)."
+            ],
+            "pickup": "Hilton Garden Inn Cusco, Santa Ana 175, Cusco",
+            "origin": "Viator",
+            "productCode": "159709P26",
+            "supplierConfirmation": "VIA-931883800",
+            "api": "Sí",
+            "cancellation": "No aplica",
+            "amount": "1.251,00 USD",
+            "passports": "FIC-JM520771, FIC-AM681404",
+            "nationalities": "USA, USA",
+            "expiry": "APRIL 17 2033, JULY 29 2031",
+            "births": "SEPTEMBER 14 1974, DECEMBER 5 1976",
+            "action": "Cancelar reserva"
+      },
+      {
+            "date": "dom, 26 abr 2026",
+            "status": "Confirmada",
+            "statusClass": "ok",
+            "title": "City Tour, Valle Sagrado y Machu Picchu",
+            "subtitle": "Programa con The Voyager Premium, guía y traslados 08:00",
+            "traveler": "Sylvain Le Berre",
+            "paxText": "2 adultos",
+            "code": "BR-847877112",
+            "sent": "Enviada 17 abr 2026, 18:28 GMT−5",
+            "phone": "+33 ***-***-7610",
+            "names": [
+                  "Sylvain Le Berre (Adulto)",
+                  "Claire Le Berre (Adulto)"
+            ],
+            "language": "Inglés",
+            "services": [
+                  "Traslado Aeropuerto Hotel.",
+                  "Guía City tour.",
+                  "Auto City tour.",
+                  "Boleto turístico.",
+                  "Auto para Valle Sagrado.",
+                  "Guía Valle Sagrado.",
+                  "Ticket Ingreso Machu Picchu.",
+                  "Ticket de Tren The Voyager Premium (ida y vuelta).",
+                  "Guía Machu Picchu.",
+                  "Bus Consettur Machu Picchu.",
+                  "Traslado Aeropuerto Hotel.",
+                  "Traslado Estación Tren (ida y vuelta)."
+            ],
+            "pickup": "Hotel Rumi Punku, Choquechaca 339, Cusco",
+            "origin": "Viator",
+            "productCode": "159709P27",
+            "supplierConfirmation": "VIA-847877112",
+            "api": "Sí",
+            "cancellation": "No aplica",
+            "amount": "1.139,00 USD",
+            "passports": "FIC-SB390211, FIC-CB557912",
+            "nationalities": "France, France",
+            "expiry": "MARCH 3 2032, AUGUST 22 2031",
+            "births": "JUNE 25 1972, APRIL 2 1975",
+            "action": "Cancelar reserva"
+      },
+      {
+            "date": "vie, 24 abr 2026",
+            "status": "Confirmada",
+            "statusClass": "ok",
+            "title": "Valle Sagrado + Machu Picchu con tren Vistadome",
+            "subtitle": "Paquete privado con hotel en Cusco y Aguas Calientes 08:30",
+            "traveler": "Jianhua Wang",
+            "paxText": "2 adultos",
+            "code": "CUZ-21413314",
+            "sent": "Enviada 15 abr 2026, 15:02 GMT−5",
+            "phone": "+86 ***-***-4288",
+            "names": [
+                  "Jianhua Wang (Adulto)",
+                  "Mei Lin Wang (Adulto)"
+            ],
+            "language": "Inglés",
+            "services": [
+                  "Recojo Aeropuerto (ida y vuelta).",
+                  "Hotel Cusco - Royal Qosqo.",
+                  "Hotel Machu Picchu - Luz Garden.",
+                  "Traslado hacia Ollantaytambo.",
+                  "Tour Valle Sagrado Privado.",
+                  "Ticket Ingreso Machu Picchu.",
+                  "Ticket de Tren Vistadome Ruta ida.",
+                  "Ticket de Tren Expedition Ruta retorno.",
+                  "Guía Machu Picchu.",
+                  "Bus Consettur Machu Picchu.",
+                  "Traslado Estación Tren (ida y vuelta)."
+            ],
+            "pickup": "Hotel Royal Qosqo, Tecsecocha 2, Cusco",
+            "origin": "Viator",
+            "productCode": "159709P28",
+            "supplierConfirmation": "VIA-21413314",
+            "api": "Sí",
+            "cancellation": "No aplica",
+            "amount": "1.191,60 USD",
+            "passports": "FIC-JW770431, FIC-MW691204",
+            "nationalities": "China, China",
+            "expiry": "JANUARY 26 2034, JUNE 12 2033",
+            "births": "MARCH 18 1981, NOVEMBER 9 1984",
+            "action": "Cancelar reserva"
+      }
+];
+
+    function listItems(items) {
+      return items.map(item => `<li>${item}</li>`).join("");
+    }
+
+    function renderBookings() {
+      const list = document.getElementById("bookingsList");
+      if (!list) return;
+
+      list.innerHTML = bookings.map((booking, index) => {
+        const expanded = index === 0 ? "show" : "";
+        const toggleText = index === 0 ? "Ocultar detalles⌃" : "Mostrar detalles⌄";
+        const badgeStyle = booking.statusClass === "ok" ? 'style="background:var(--primary);"' : "";
+        return `
+          <article class="booking-card">
+            <div class="booking-top"><span>🗓️ ${booking.date}</span><span class="badge" ${badgeStyle}>${booking.status}</span></div>
+            <h2>${booking.title}</h2>
+            <div class="subtitle">${booking.subtitle}</div>
+            <div class="booking-grid">
+              <div><b>Viajero principal:</b> ${booking.traveler}<br><br>${booking.paxText}</div>
+              <div><b>${booking.code}</b><br><br>${booking.sent}</div>
+            </div>
+            <button class="details-toggle" type="button" data-booking="${index}">${toggleText}</button>
+
+            <div class="booking-details ${expanded}" id="bookingDetails${index}">
+              <div class="instant-label">CONFIRMACIÓN INSTANTÁNEA</div>
+              <div class="details-columns">
+                <div>
+                  <p class="detail-heading">Números de teléfono de clientes:</p>
+                  <p class="masked-phone">${booking.phone} <span class="show-link">◉ Show</span></p>
+
+                  <p class="detail-heading">Nombres de los viajeros:</p>
+                  <ul>${listItems(booking.names)}</ul>
+
+                  <p class="detail-heading">Idioma de la excursión o actividad:</p>
+                  <ul><li>${booking.language}</li></ul>
+
+                  <p class="detail-heading">Servicios incluidos:</p>
+                  <ul>${listItems(booking.services)}</ul>
+
+                  <p class="detail-heading">Datos del viajero:</p>
+                  <ul>
+                    <li><b>Número de pasaporte:</b> ${booking.passports}</li>
+                    <li><b>Nacionalidad del titular del pasaporte:</b> ${booking.nationalities}</li>
+                    <li><b>Fecha de caducidad del pasaporte:</b> ${booking.expiry}</li>
+                    <li><b>Fechas de nacimiento:</b> ${booking.births}</li>
+                  </ul>
+                </div>
+                <div>
+                  <p><b>Punto de recogida:</b> ${booking.pickup}</p>
+                  <p><b>Origen de las reservas:</b> ${booking.origin}</p>
+                  <p><b>Código del producto:</b> ${booking.productCode}</p>
+                  <p><b>Número de confirmación del proveedor:</b> ${booking.supplierConfirmation}</p>
+                  <p><b>Autorizada por la API:</b> ${booking.api}</p>
+                  <p><b>Solicitud de cancelación:</b> ${booking.cancellation}</p>
+                  <p><b>Importe que recibirá:</b> ${booking.amount}</p>
+                  <div class="booking-links">
+                    <a href="#">Contactar con el servicio de atención al cliente</a>
+                    <a href="#">Historial de reservas</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="booking-actions"><a href="#">${booking.action}</a></div>
+          </article>`;
+      }).join("") + `
+        <div class="pagination-row">
+          <div class="page-indicator"><span>‹</span><span class="current-page">1</span><span>›</span></div>
+          <div class="per-page"><span>Results per page:</span><span class="per-page-box">10⌄</span></div>
+        </div>`;
+
+      document.querySelectorAll(".details-toggle").forEach(button => {
+        button.addEventListener("click", () => {
+          const index = button.dataset.booking;
+          const details = document.getElementById(`bookingDetails${index}`);
+          const isOpen = details.classList.toggle("show");
+          button.textContent = isOpen ? "Ocultar detalles⌃" : "Mostrar detalles⌄";
+        });
+      });
+    }
+
     if (sessionStorage.getItem("viatorSupplierLoggedIn") !== "true") {
       window.location.href = "index.html";
     }
@@ -802,6 +1426,8 @@
     document.getElementById("closeBokun").addEventListener("click", () => {
       document.getElementById("bokunBanner").classList.remove("show");
     });
+
+    renderBookings();
   </script>
 </body>
 </html>
