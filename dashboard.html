@@ -2532,6 +2532,10 @@
       }
 ];
 
+    function listItems(items) {
+      return (items || []).map(item => `<li>${item}</li>`).join("");
+    }
+
     function renderBookings() {
       const list = document.getElementById("bookingsList");
       if (!list) return;
